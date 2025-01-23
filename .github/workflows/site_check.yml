@@ -42,5 +42,5 @@ jobs:
       - name: Notify via Discord
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content":"The website content at https://example.com has changed!"}' \
+          -d '{"content":"Promjena uocena: https://matinf.pmf.unibl.org/novosti/ !"}' \
            ${{ secrets.DISCORD_WEBHOOK_URL }}
