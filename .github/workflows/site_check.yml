@@ -38,3 +38,9 @@ jobs:
             git commit -m "Update hash file after site check"
             git push
           fi
+        
+      - name: Notify via Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{"content":"The website content at https://example.com has changed!"}' \
+           ${{ secrets.DISCORD_WEBHOOK_URL }}
