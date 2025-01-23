@@ -2,7 +2,7 @@
 import hashlib
 import requests
 
-URL = "https://example.com"  # Replace with the website you want to monitor
+URL = "https://matinf.pmf.unibl.org/novosti/"  # Replace with the website you want to monitor
 HASH_FILE = "site_hash.txt"  # File to store the previous hash
 
 def get_site_content(url):
