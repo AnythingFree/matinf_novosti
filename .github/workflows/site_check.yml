@@ -2,8 +2,11 @@ name: Site Change Detection
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Runs every hour (adjust cron as needed)
+    - cron: "0 * * * *"  # Runs every hour
   workflow_dispatch:     # Allows manual triggering
+
+permissions:
+  contents: write  # Grant write permissions to the workflow
 
 jobs:
   check-site:
@@ -16,10 +19,18 @@ jobs:
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"  # Specify Python version
+          python-version: "3.10"
 
       - name: Install Dependencies
         run: pip install requests
 
       - name: Run Site Checker
-        run: python script.py
+        run: python site_checker.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add site_hash.txt
+          git commit -m "Update hash file after site check"
+          git push
