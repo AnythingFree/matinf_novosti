@@ -1,2 +1,3 @@
 # MatInf news
-discord server: https://discord.gg/T4seMR4Z 
+
+Dis bot sends updates on discord server: https://discord.gg/T4seMR4Z 
