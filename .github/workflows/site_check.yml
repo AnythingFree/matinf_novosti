@@ -46,5 +46,5 @@ jobs:
         if: env.site_changed == 'true'
         run: |
           curl -H "Content-Type: application/json" \
-          -d '{"content":"${script_output} : https://matinf.pmf.unibl.org/novosti/ "}' \
+          -d "{\"content\":\"${script_output} : https://matinf.pmf.unibl.org/novosti/ \"}" \
            ${{ secrets.DISCORD_WEBHOOK_URL }}
