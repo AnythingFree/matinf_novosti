@@ -2,7 +2,7 @@ name: Site Change Detection
 
 on:
   schedule:
-    - cron: "*/60 * * * *"  # Runs every hour
+    - cron: "0 9 * * *"  # Runs every hour
   workflow_dispatch:     # Allows manual triggering
 
 permissions:
