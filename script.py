@@ -33,7 +33,7 @@ def main():
     previous_hash = load_previous_hash(HASH_FILE)
 
     if current_hash != previous_hash:
-        print("Website content has changed!")
+        print("MatInf novosti ")
         # Save the new hash
         save_current_hash(HASH_FILE, current_hash)
     else:
